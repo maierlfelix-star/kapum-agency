@@ -180,7 +180,11 @@ gap: 24px;
       padding: 28px 0 38px;
       border-bottom: 1px solid var(--line);
     }
-
+#about,
+#projects,
+#contact {
+  scroll-margin-top: 90px;
+}
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -200,18 +204,24 @@ gap: 24px;
       max-width: 18ch;
     }
 
-   .projects {
-  display: block;
-}
-
-.project {
-  width: 100%;
+   .project {
+  width: fit-content;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .project-media img {
   width: 100%;
+  max-width: 895px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
     .project {
@@ -225,8 +235,8 @@ gap: 24px;
       min-height: 280px;
     }
 
-    .project:hover img{
-transform:scale(1.03);
+    .project:hover img {
+  transform: scale(1.01);
 }
 
 .project-media img{
@@ -445,7 +455,7 @@ transition:transform .35s ease;
       <nav class="nav">
         <a href="#projects">events</a>
         <a href="#about">about</a>
-  <a href="#" id="copyEmail">contact</a>
+  <a href="#contact" id="copyEmail">contact</a>
       </nav>
     </div>
   </header>
@@ -462,7 +472,18 @@ transition:transform .35s ease;
         </div>
       </div>
     </section>
-
+<section id="about" class="section">
+      <div class="about-grid">
+        <div>
+          <div class="label">.about</div>
+          <p class="big-copy">vienna based. working internationally.</p>
+        </div>
+        <div class="text-block">
+          <p>we create visual storytelling, cultural formats and strategic communication for artists, regional makers and social initiatives.</p>
+          <p>from image films and visual identity to event concepts, documentation and digital presence.</p>
+        </div>
+      </div>
+    </section>
     <section id="projects" class="section">
       <div class="section-head">
         <div class="label">.events</div>
@@ -490,19 +511,6 @@ transition:transform .35s ease;
 
 </div>
 
-    </section>
-
-    <section id="about" class="section">
-      <div class="about-grid">
-        <div>
-          <div class="label">.about</div>
-          <p class="big-copy">vienna based. working internationally.</p>
-        </div>
-        <div class="text-block">
-          <p>we create visual storytelling, cultural formats and strategic communication for artists, regional makers and social initiatives.</p>
-          <p>from image films and visual identity to event concepts, documentation and digital presence.</p>
-        </div>
-      </div>
     </section>
 
     <section id="contact" class="section">
@@ -544,8 +552,7 @@ kapum.agency - visual. culture. sustainability.
 const email = "hello@kapum.agency";
 const link = document.getElementById("copyEmail");
 
-link.addEventListener("click", function(e) {
-  e.preventDefault();
+link.addEventListener("click", function() {
 
   navigator.clipboard.writeText(email);
 
