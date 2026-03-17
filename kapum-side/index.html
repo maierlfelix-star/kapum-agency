@@ -350,20 +350,31 @@ transition:transform .35s ease;
   }
 
   .topbar-inner {
-    min-height: 64px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    min-height: 64px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .brand img {
+    display: block;
+    height: 16px;
+    width: auto;
   }
 
   .nav {
-    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 14px;
+    margin-left: auto;
     flex-wrap: wrap;
-    justify-content: flex-end;
   }
 
   .footer-links {
