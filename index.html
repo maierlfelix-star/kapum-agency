@@ -523,9 +523,32 @@ transition:transform .35s ease;
 }
 
 @media (max-width: 768px) {
+
+  /* Poster kleiner */
+  .event-poster img {
+    max-height: 50vh;   /* vorher zu groß */
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* Layout bleibt untereinander */
   .event-hero {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
+  /* Text enger */
+  .event-bigtext {
+    gap: 0.05em; /* enger */
+  }
+
+  .event-bigtext span {
+    font-size: 14vw;     /* skalierend */
+    line-height: 0.8;    /* enger */
+    letter-spacing: -0.04em;
+  }
+
+}
 
   .event-bigtext {
     gap: 0.1em;
@@ -537,7 +560,7 @@ transition:transform .35s ease;
   .event-bigtext span {
     font-size: 12vw;
   }
-}
+  
   </style>
 </head>
 <body>
