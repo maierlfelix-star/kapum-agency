@@ -486,9 +486,9 @@ transition:transform .35s ease;
 
 /* poster */
 .event-poster img {
-  height: 100%;
-  max-height: 90vh; /* nutzt Bildschirmhöhe */
-  width: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
   object-fit: cover;
 }
 
@@ -528,19 +528,19 @@ transition:transform .35s ease;
   grid-template-columns: 1fr; /* Mobile: volle Breite */
 }
 
-  .event-poster {
-    width: 100%;
-  }
+ .event-poster {
+  width: 100%;
+}
 
   .event-poster img {
-    display: block;
-    width: 100%;
-    max-width: none;
-    height: none;
-    max-height: 60vh;
-    object-fit: contain;
-    margin: 0;
-  }
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+}
 
   .event-bigtext {
     align-items: flex-start;
